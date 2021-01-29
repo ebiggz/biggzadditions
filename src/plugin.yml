@@ -1,0 +1,72 @@
+main: net.ebiggz.biggzadditions.BiggzAdditions
+name: BiggzAdditions
+version: 1.0.0
+load: POSTWORLD
+api-version: 1.16
+author: ebiggz
+description: General purpose plugin.
+depend: [Vault, Herochat, PlayerParticles, Residence]
+commands:
+  colors:
+    description: Shows all the color and format text codes.
+    usage: /<command>
+  formats:
+    description: Shows all the color and format text codes.
+    usage: /<command>
+  affixer:
+    description: Shows Affixer help menu.
+    usage: /<command> ?/Help  - Shows help menu
+  wt:
+    description: Custom weather commands
+    usage: /<command> ?/Help  - Shows help menu
+  dream:
+    description: Initiate dreaming
+    usage: /<command>
+  wakeup:
+    description: Wake up from dream world
+    usage: /<command>
+  death:
+    description: See your previous death location
+    usage: /<command>
+  map:
+    description: Get url to online map
+    usage: /<command>
+  nickname:
+    description: Set your nickname
+    usage: /<command>
+  setnickname:
+    description: Set someone elses nickname
+    usage: /<command> PlayerName [nick]
+  c:
+    description: Toggles the compass hud
+    usage: /<command>
+  phantomreset:
+    description: Toggles the phantom reset when anyone sleeps
+    usage: /<command>
+permissions:
+  affixer.colors:
+    default: true
+  affixer.colornames:
+    default: true
+  affixer.prefix:
+    default: true
+  affixer.suffix:
+    default: true
+  affixer.*:
+    default: op
+    children:
+      affixer.colornames: true
+      affixer.colors: true
+      affixer.prefix: true
+      affixer.suffix: true
+  booty.nickname.self:
+    default: false
+  booty.nickname.others:
+    default: false
+  booty.*:
+    default: op
+    children:
+      booty.nickname.self: true
+      booty.nickname.others: true
+  booty.admin:
+    default: op
