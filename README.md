@@ -13,4 +13,8 @@
 ```
 mvn install:install-file -Dfile=./dependencies/Residence.jar -DgroupId=com.bekvon -DartifactId=Residence -Dversion=4.9.2.3 -Dpackaging=jar -DgeneratePom=true
 ```
+(If you're using ItelliJ IDEA, click the **Execute Maven Goal** button and paste in the above command)
+
+**Building**
+- Run the *package* Maven goal
 
