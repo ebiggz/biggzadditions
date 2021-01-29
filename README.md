@@ -8,7 +8,8 @@
 
 **Steps**:
 - Clone repo
-- Install maven deps
+- Import into IDE
+- Make sure Maven has installed dependancies (Run Maven *install* goal)
 - Add included Residence.jar to local maven repo:
 ```
 mvn install:install-file -Dfile=./dependencies/Residence.jar -DgroupId=com.bekvon -DartifactId=Residence -Dversion=4.9.2.3 -Dpackaging=jar -DgeneratePom=true
