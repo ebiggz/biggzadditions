@@ -73,7 +73,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>BiggzAdditions</finalName>
         <sourceDirectory>src</sourceDirectory>
         <resources>
             <resource>
