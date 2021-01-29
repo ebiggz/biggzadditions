@@ -3,6 +3,7 @@ package net.ebiggz.biggzadditions.listeners.player;
 import net.ebiggz.biggzadditions.BiggzAdditions;
 import net.ebiggz.biggzadditions.constants.WorldName;
 import net.ebiggz.biggzadditions.players.BPlayer;
+import net.ebiggz.biggzadditions.util.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -46,13 +47,13 @@ public class PlayerInteractListener implements Listener {
 
                     player.sendMessage(ChatColor.AQUA + "Drifting off to dream land...");
 
-                    LivingEntity entity = player;
-                    entity.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 100,
-                            true, true));
+                    Utils.blindPlayer(player, 2);
 
                     Bukkit.getScheduler().runTaskLater(BiggzAdditions.getPlugin(), () -> {
 
                         player.teleport(dreamSpawnLocation, TeleportCause.PLUGIN);
+
+                        Utils.blindPlayer(player, 1);
 
                         player.sendMessage(ChatColor.AQUA + "You are now dreaming. Type " +
                                 ChatColor.YELLOW + "/wakeup" +

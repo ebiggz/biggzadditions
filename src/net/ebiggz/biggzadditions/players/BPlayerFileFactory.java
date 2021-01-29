@@ -11,7 +11,7 @@ public class BPlayerFileFactory {
 
     public static Config loadPlayerFile(String playerName) {
         String pluginFolder = BiggzAdditions.getPlugin().getDataFolder().getAbsolutePath() + File.separator;
-        String playerDataFolderPath = "data" + File.separator + "playerdata" + File.separator;
+        String playerDataFolderPath = "data" + File.separator + "players" + File.separator;
         String playerFileName = playerName + ".yml";
 
         ensureFileExists(pluginFolder + playerDataFolderPath, playerFileName);

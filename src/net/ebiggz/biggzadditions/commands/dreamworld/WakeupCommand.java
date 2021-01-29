@@ -7,13 +7,17 @@ import co.aikar.commands.annotation.Default;
 import net.ebiggz.biggzadditions.BiggzAdditions;
 import net.ebiggz.biggzadditions.constants.WorldName;
 import net.ebiggz.biggzadditions.players.BPlayer;
+import net.ebiggz.biggzadditions.util.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
-@CommandAlias("wake")
+@CommandAlias("wakeup")
 public class WakeupCommand extends BaseCommand {
 
 	@Default
@@ -31,6 +35,16 @@ public class WakeupCommand extends BaseCommand {
 			teleportLocation = Bukkit.getWorld(WorldName.MAIN_WORLD).getSpawnLocation();
 		}
 
-		player.teleport(teleportLocation, TeleportCause.PLUGIN);
+		final Location tpTarget = teleportLocation;
+
+		LivingEntity entity = player;
+
+		Utils.blindPlayer(player, 2);
+
+		Bukkit.getScheduler().runTaskLater(BiggzAdditions.getPlugin(), () -> {
+			player.teleport(tpTarget, TeleportCause.PLUGIN);
+			Utils.blindPlayer(player, 1);
+		}, 20);
+
 	}
 }

@@ -3,7 +3,14 @@ package net.ebiggz.biggzadditions.util;
 import net.ebiggz.biggzadditions.BiggzAdditions;
 import net.ebiggz.biggzadditions.players.BPlayer;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.SoundGroup;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.Locale;
 import java.util.regex.Pattern;
@@ -37,4 +44,9 @@ public class Utils {
             return translatedNick;
         }
     }
+
+    public static void blindPlayer(Player player, int seconds) {
+
+    }
+
 }

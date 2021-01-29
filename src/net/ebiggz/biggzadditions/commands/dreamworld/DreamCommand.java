@@ -1,6 +1,7 @@
 package net.ebiggz.biggzadditions.commands.dreamworld;
 
 import co.aikar.commands.BaseCommand;
+import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Conditions;
 import co.aikar.commands.annotation.Default;
 import net.ebiggz.biggzadditions.BiggzAdditions;
@@ -9,6 +10,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitScheduler;
 
+@CommandAlias("dream")
 public class DreamCommand extends BaseCommand {
 
 	@Default

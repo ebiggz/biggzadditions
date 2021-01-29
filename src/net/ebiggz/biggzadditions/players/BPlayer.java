@@ -31,7 +31,7 @@ public class BPlayer {
         this.hideWeather = config.getBoolean("autoHideWeather", false);
         this.dreamBedLoc = config.getLocation("dreamBedLocation", null);
         this.lastDeathLoc = config.getLocation("lastDeathLocation", null);
-        this.homeLoc = config.getLocation("home", null);
+        this.homeLoc = config.getLocation("homeLocation", null);
         this.nickname = config.getString("nickname", null);
 
         // death logs
@@ -94,7 +94,7 @@ public class BPlayer {
 
     public void setHomeLoc(Location homeLoc) {
         this.homeLoc = homeLoc;
-        saveToFile("home", homeLoc);
+        saveToFile("homeLocation", homeLoc);
     }
 
     public String getNickname() {
@@ -147,8 +147,10 @@ public class BPlayer {
     }
 
     private <E> void saveToFile(String path, E data) {
-        FileConfiguration config = BPlayerFileFactory.loadPlayerFile(playerName).getConfig();
+        Config bPlayerData = BPlayerFileFactory.loadPlayerFile(playerName);
+        FileConfiguration config = bPlayerData.getConfig();
         config.set(path, data);
+        bPlayerData.save();
     }
 
 }
