@@ -36,7 +36,7 @@ public class BiggzAdditions extends JavaPlugin {
 		plugin = this;
 
 		PluginManager pluginManager = getServer().getPluginManager();
-		
+
 		//setup vault
 		if(!setupVault()) {
 			pluginManager.disablePlugin(this);
